@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>پانێڵی بەڕێوەبردن</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="admin-container">
+        <h2>داشبۆردی بەڕێوەبردن</h2>
+        
+        <!-- بەشی فرۆشیار: زیادکردنی کاڵا -->
+        <section id="seller-section">
+            <h3>زیادکردنی کاڵای نوێ (فرۆشیار)</h3>
+            <form id="add-product-form">
+                <input type="text" id="p-name" placeholder="ناوی کاڵا" required>
+                <input type="number" id="p-price" placeholder="نرخ" required>
+                <select id="p-category">
+                    <option value="clothes-men">جلی پیاوان</option>
+                    <option value="clothes-women">جلی ئافرەتان</option>
+                    <option value="clothes-kids">جلی منداڵان</option>
+                    <option value="mobiles">مۆبایل</option>
+                    <option value="computers">کۆمپیوتەر</option>
+                    <option value="home-appliances">کەلوپەلی ناوماڵ</option>
+                </select>
+                <input type="text" id="p-affiliate" placeholder="Affiliate Link (ئارەزوومەندانە)">
+                <button type="submit">تۆمارکردنی کاڵا</button>
+            </form>
+        </section>
+
+        <!-- بەشی ئەدمین: پەسەندکردنی فرۆشیاران و داواکارییەکان -->
+        <section id="admin-section">
+            <h3>پەسەندکردنی فرۆشیاران و داواکارییەکان (ئەدمین)</h3>
+            <div id="sellers-list"></div>
+            <h4>کۆمسیۆنی ئۆتۆماتیکی (10%)</h4>
+        </section>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore-compat.js"></script>
+    <script src="js/firebase.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
