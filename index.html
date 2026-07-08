@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benar Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- بەشی سەرەوە (Header) -->
+    <header>
+        <div class="header-container">
+            <div class="logo-area">
+                <!-- لۆگۆ لێرە دابنێ -->
+                <div class="logo-placeholder">Benar</div>
+            </div>
+            <nav>
+                <button id="lang-btn" onclick="toggleLanguage()">English</button>
+                <button id="auth-btn" onclick="openAuthModal()">چوونەژوورەوە / خۆتۆمارکردن</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- بەشی سەرەکی و ناساندن -->
+    <section class="hero">
+        <h1 id="hero-title">بەخێربێن بۆ کۆگای بێنار</h1>
+        <p id="hero-desc">باشترین و باوەڕپێکراوترین کاڵاکان لێرە بەدەست بهێنە</p>
+    </section>
+
+    <!-- بەشی بەڕێوەبردنی کاڵاکان (Admin/Seller Panel) -->
+    <section class="admin-panel">
+        <h2 id="admin-title">زیادکردنی کاڵای نوێ</h2>
+        <div class="form-group">
+            <input type="text" id="prod-name" placeholder="ناوی کاڵا">
+            <input type="number" id="prod-price" placeholder="نرخ ($)">
+            <input type="text" id="prod-img" placeholder="لینکی وێنەی کاڵا">
+            <button id="add-btn" onclick="addOrUpdateProduct()">زیادکردن</button>
+        </div>
+    </section>
+
+    <!-- بەشی نیشاندانی کاڵاکان -->
+    <main class="products-container">
+        <h2 id="products-title">کاڵاکانی ئێستا</h2>
+        <div id="products-grid" class="products-grid">
+            <!-- کاڵاکان بە دینامیکی لێرە جێگەیان دەبێتەوە -->
+        </div>
+    </main>
+
+    <!-- مۆداڵ (پەنجەرەی) لۆگین و ڕیجستەر -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAuthModal()">&times;</span>
+            <div class="auth-tabs">
+                <button id="tab-login" class="active" onclick="switchAuthTab('login')">چوونەژوورەوە</button>
+                <button id="tab-register" onclick="switchAuthTab('register')">خۆتۆمارکردن</button>
+            </div>
+            <form id="auth-form" onsubmit="handleAuth(event)">
+                <input type="email" id="auth-email" placeholder="ئیمەیڵ" required>
+                <input type="password" id="auth-password" placeholder="وشەی نهێنی" required>
+                <button type="submit" id="auth-submit-btn">بچۆ ژوورەوە</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
